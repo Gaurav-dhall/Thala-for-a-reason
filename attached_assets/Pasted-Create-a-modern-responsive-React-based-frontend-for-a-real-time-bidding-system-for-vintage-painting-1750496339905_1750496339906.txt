@@ -1,0 +1,84 @@
+Create a modern, responsive React-based frontend for a real-time bidding system for vintage paintings.
+
+### ⚙️ Tech Stack:
+- React with functional components
+- React Router DOM for routing
+- Axios for REST API calls (GET painting info, POST bid)
+- Tailwind CSS for styling
+- Lucide React for icons
+- Socket.io-client for real-time bid updates
+- Integration with OmniDimension voice agent via floating mic button
+
+---
+
+### 🎨 1. Home Page (/)
+- Fetch painting data from GET /auctions
+- Display all paintings in a responsive grid layout
+- Each painting card should show:
+  - 🎨 Painting Title
+  - 🧑‍🎨 Painter’s Name
+  - 📅 Year Created
+  - 🖼️ Type of Painting (Oil, Watercolor, etc.)
+  - 💸 Current Highest Bid
+  - ⏰ Time Remaining
+- Use *Lucide React icons* next to each attribute
+- Clicking on a painting card navigates to /auction/:id
+
+---
+
+### 📄 2. Painting Detail Page (/auction/:id)
+- Fetch painting detail from GET /auctions/:id
+- Display all metadata (title, painter, year, type)
+- Show *real-time bid updates* using *Socket.io*:
+  - Connect on component mount
+  - Listen for "bidUpdate" event
+  - Update current bid and history in real time
+- Display *bid history* in a table:
+  - Bidder name, amount, timestamp
+- Include bid submission form:
+  - Name, Bid Amount
+  - Validate bid is higher than current
+  - Submit via POST /auctions/:id/bid
+
+---
+
+### 🎙️ 3. Voice Assistant Integration
+- Add a floating button at bottom-right: "🎙️ Talk to Auction Assistant"
+- On click, integrate with OmniDimension voice agent (webhook or SDK)
+- Voice flow:
+  - List current auction items with bid status
+  - Ask user if they want to place a bid
+  - Accept name and bid amount via voice
+  - Send bid using backend API
+  - Socket.io should reflect changes in frontend in real-time
+
+---
+
+### 📊 4. Optional Dashboard Page
+- Show:
+  - Total number of bids per painting
+  - Highest bid overall
+  - Top 3 most active paintings
+- Use charts (optional) or tables
+
+---
+
+### 🧑‍🎨 UI/UX Expectations:
+- Use *Tailwind CSS* for styling
+- Clean, art-themed design with soft tones
+- Use *Lucide React icons* (e.g., Brush, Calendar, Frame, DollarSign, Clock)
+- Mobile-friendly layout with responsive cards
+- Loading spinners and error states for data fetching
+
+---
+
+### 🔌 Socket.io Usage Notes:
+- Connect to backend via socket.io-client
+- On /auction/:id, listen to:
+  - bidUpdate → Update current bid and bid history instantly
+  - Optional: emit joinRoom or subscribeAuction on mount
+- Disconnect socket on unmount
+
+---
+
+Generate all necessary components, hook structure (useEffect, useSocket, etc.), and basic styling with Tailwind.
