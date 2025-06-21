@@ -102,6 +102,8 @@ export class MemStorage implements IStorage {
         ...painting,
         id,
         createdAt: new Date(),
+        description: painting.description || null,
+        imageUrl: painting.imageUrl || null,
       });
     });
 
@@ -143,6 +145,8 @@ export class MemStorage implements IStorage {
       ...paintingData,
       id,
       createdAt: new Date(),
+      description: paintingData.description || null,
+      imageUrl: paintingData.imageUrl || null,
     };
     this.paintings.set(id, painting);
     return painting;
