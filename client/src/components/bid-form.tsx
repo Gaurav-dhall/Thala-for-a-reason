@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Gavel, DollarSign, TrendingUp, Zap, Crown } from "lucide-react";
+import { Cpu, DollarSign, TrendingUp, Zap, Shield, Activity } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -66,67 +66,67 @@ export default function BidForm({ painting, onBidSuccess }: BidFormProps) {
   };
 
   return (
-    <Card className="glass-effect premium-shadow elegant-border overflow-hidden">
-      <CardHeader className="luxury-gradient text-white relative">
-        <div className="absolute inset-0 bg-black/10"></div>
+    <Card className="glass-card premium-shadow cyber-border overflow-hidden">
+      <CardHeader className="neon-gradient text-white relative">
+        <div className="absolute inset-0 bg-black/20"></div>
         <CardTitle className="flex items-center text-2xl font-bold relative z-10">
-          <Crown className="w-6 h-6 mr-3" />
-          Place Your Exclusive Bid
+          <Cpu className="w-6 h-6 mr-3 pulse-neon" />
+          Neural Bid Interface
         </CardTitle>
-        <p className="text-white/90 text-sm font-medium relative z-10">
-          Join the elite circle of collectors
+        <p className="text-white/90 text-sm font-medium relative z-10 uppercase tracking-wider">
+          Access Elite Node Network
         </p>
       </CardHeader>
       <CardContent className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <Label htmlFor="bidderName" className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3 block">
-              Collector Name
+            <Label htmlFor="bidderName" className="text-sm font-semibold text-neon uppercase tracking-wider mb-3 block">
+              User Identity
             </Label>
             <Input
               id="bidderName"
               type="text"
               value={formData.bidderName}
               onChange={(e) => setFormData({...formData, bidderName: e.target.value})}
-              className={`h-12 text-lg font-medium elegant-border ${errors.bidderName ? 'border-destructive' : ''}`}
-              placeholder="Enter your distinguished name"
+              className={`h-12 text-lg font-medium cyber-border bg-deep-space/50 text-foreground ${errors.bidderName ? 'border-red-500' : ''}`}
+              placeholder="Enter neural ID"
             />
             {errors.bidderName && (
-              <p className="text-destructive text-sm mt-2 font-medium">{errors.bidderName}</p>
+              <p className="text-red-400 text-sm mt-2 font-medium">{errors.bidderName}</p>
             )}
           </div>
 
           <div>
-            <Label htmlFor="amount" className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3 block">
-              Bid Amount (USD)
+            <Label htmlFor="amount" className="text-sm font-semibold text-cyber uppercase tracking-wider mb-3 block">
+              Quantum Value (USD)
             </Label>
             <div className="relative">
               <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
-                <DollarSign className="w-6 h-6 text-luxury-gold" />
+                <DollarSign className="w-6 h-6 text-luxury-gold pulse-neon" />
               </div>
               <Input
                 id="amount"
                 type="number"
                 value={formData.amount}
                 onChange={(e) => setFormData({...formData, amount: e.target.value})}
-                className={`pl-14 h-14 text-2xl font-bold elegant-border ${errors.amount ? 'border-destructive' : ''}`}
+                className={`pl-14 h-14 text-2xl font-bold cyber-border bg-deep-space/50 text-foreground ${errors.amount ? 'border-red-500' : ''}`}
                 placeholder={`Min: ${formatCurrency(minimumBid)}`}
-                min={minimumBid}
+                min={minimumBid.toString()}
                 step="1000"
               />
             </div>
             {errors.amount && (
-              <p className="text-destructive text-sm mt-2 font-medium">{errors.amount}</p>
+              <p className="text-red-400 text-sm mt-2 font-medium">{errors.amount}</p>
             )}
             
-            <div className="mt-4 p-4 bg-gradient-to-r from-primary/5 to-gold-primary/5 rounded-xl border border-gold-primary/20">
+            <div className="mt-4 p-4 glass-effect rounded-xl cyber-border">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-muted-foreground">Current Highest Bid:</span>
+                <span className="text-sm font-medium text-muted-foreground">Current Neural Bid:</span>
                 <span className="text-lg font-bold text-luxury-gold">{formatCurrency(currentBid)}</span>
               </div>
               <div className="mt-2 flex items-center space-x-2">
-                <Zap className="w-4 h-4 text-primary" />
-                <span className="text-xs font-medium text-primary">Minimum increment: $1,000</span>
+                <Activity className="w-4 h-4 text-neon-blue animate-pulse" />
+                <span className="text-xs font-medium text-neon-blue">Minimum increment: $1,000</span>
               </div>
             </div>
           </div>
@@ -134,25 +134,25 @@ export default function BidForm({ painting, onBidSuccess }: BidFormProps) {
           <Button
             type="submit"
             disabled={submitting}
-            className="w-full h-14 btn-luxury text-lg font-bold tracking-wide mt-8 relative overflow-hidden group"
+            className="w-full h-14 btn-cyber text-lg font-bold tracking-wider mt-8 relative overflow-hidden group"
           >
             {submitting ? (
               <>
                 <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-3"></div>
-                Processing Your Bid...
+                Processing Neural Request...
               </>
             ) : (
               <>
-                <Gavel className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" />
-                Secure Your Bid
-                <TrendingUp className="w-5 h-5 ml-3 group-hover:scale-110 transition-transform duration-300" />
+                <Shield className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" />
+                Execute Neural Bid
+                <Zap className="w-5 h-5 ml-3 group-hover:scale-110 transition-transform duration-300" />
               </>
             )}
           </Button>
           
           <p className="text-xs text-muted-foreground text-center mt-4 leading-relaxed">
-            By placing a bid, you agree to our terms of service and commit to payment if successful.
-            All bids are legally binding and subject to auction house policies.
+            Neural bid execution confirms legal binding contract in the cyber auction matrix.
+            All transactions are secured through quantum encryption protocols.
           </p>
         </form>
       </CardContent>

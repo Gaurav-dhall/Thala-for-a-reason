@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Mic, MicOff, Sparkles, Zap } from "lucide-react";
+import { Mic, MicOff, Cpu, Radio, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
@@ -17,8 +17,8 @@ export default function VoiceAssistant() {
   const handleVoiceCommand = () => {
     if (!isSupported) {
       toast({
-        title: "Speech Recognition Not Supported",
-        description: "Your browser doesn't support speech recognition. Please use a modern browser.",
+        title: "Neural Interface Unavailable",
+        description: "Your system doesn't support neural voice recognition. Please upgrade your browser.",
         variant: "destructive",
       });
       return;
@@ -27,16 +27,16 @@ export default function VoiceAssistant() {
     setIsListening(true);
     
     toast({
-      title: "🎤 AI Auction Assistant Activated",
-      description: "Try: 'Show me the Monet painting' or 'What's the highest bid on Sunset Over Venice?'",
+      title: "Neural Assistant Online",
+      description: "Voice commands: 'Analyze auction matrix' or 'Show highest value nodes'",
     });
 
-    // Simulate sophisticated voice processing
+    // Simulate cyber AI processing
     setTimeout(() => {
       setIsListening(false);
       toast({
-        title: "✨ Voice Command Processed",
-        description: "Advanced AI voice integration with real-time auction intelligence is ready for deployment.",
+        title: "Neural Processing Complete",
+        description: "Advanced AI voice matrix successfully integrated with auction neural network.",
       });
     }, 3000);
   };
@@ -44,12 +44,12 @@ export default function VoiceAssistant() {
   return (
     <div className="fixed bottom-8 right-8 z-50">
       <div className="relative">
-        {/* Floating particles effect */}
+        {/* Cyber particle effects */}
         {isListening && (
           <>
-            <Sparkles className="absolute -top-8 -left-4 w-4 h-4 text-gold-primary animate-ping" />
-            <Zap className="absolute -top-6 -right-6 w-3 h-3 text-primary animate-pulse delay-200" />
-            <Sparkles className="absolute -bottom-4 -right-8 w-3 h-3 text-gold-primary animate-ping delay-500" />
+            <Radio className="absolute -top-8 -left-4 w-4 h-4 text-neon-blue animate-ping" />
+            <Zap className="absolute -top-6 -right-6 w-3 h-3 text-plasma-pink animate-pulse delay-200" />
+            <Cpu className="absolute -bottom-4 -right-8 w-3 h-3 text-neon-green animate-ping delay-500" />
           </>
         )}
         
@@ -58,15 +58,18 @@ export default function VoiceAssistant() {
           disabled={isListening}
           className={`relative overflow-hidden w-16 h-16 rounded-full shadow-2xl transition-all duration-500 group ${
             isListening 
-              ? 'luxury-gradient animate-pulse scale-110 pulse-glow' 
-              : 'btn-luxury hover:scale-110'
+              ? 'neon-gradient animate-pulse scale-110 neon-glow' 
+              : 'btn-cyber hover:scale-110'
           }`}
           size="lg"
         >
-          {/* Background glow effect */}
+          {/* Neural glow effect */}
           <div className={`absolute inset-0 rounded-full transition-opacity duration-300 ${
-            isListening ? 'bg-gradient-to-r from-primary to-gold-primary opacity-30 animate-pulse' : 'opacity-0'
+            isListening ? 'neon-gradient opacity-30 animate-pulse' : 'opacity-0'
           }`}></div>
+          
+          {/* Holographic border */}
+          <div className="absolute inset-0 rounded-full border-2 border-neon-purple/30 group-hover:border-neon-purple/60 transition-colors duration-300"></div>
           
           {/* Icon */}
           <div className="relative z-10">
@@ -80,34 +83,35 @@ export default function VoiceAssistant() {
             )}
           </div>
 
-          {/* Tooltip */}
+          {/* Cyber tooltip */}
           <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
-            <div className="glass-effect premium-shadow rounded-xl px-4 py-3 min-w-max">
+            <div className="glass-card premium-shadow rounded-xl px-4 py-3 min-w-max cyber-border">
               <div className="flex items-center space-x-2">
-                <Sparkles className="w-4 h-4 text-luxury-gold" />
-                <span className="text-sm font-semibold text-foreground whitespace-nowrap">
-                  AI Auction Assistant
+                <Cpu className="w-4 h-4 text-neon-blue" />
+                <span className="text-sm font-semibold text-neon whitespace-nowrap">
+                  Neural Voice Matrix
                 </span>
               </div>
               <p className="text-xs text-muted-foreground mt-1">
-                Voice-powered bidding & insights
+                AI-powered auction interface
               </p>
             </div>
-            {/* Arrow */}
-            <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-8 border-l-white/20 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
           </div>
         </Button>
 
-        {/* Status indicator */}
+        {/* Neural activity indicator */}
         {isListening && (
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+          <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
             <div className="flex space-x-1">
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce delay-100"></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-bounce delay-200"></div>
+              <div className="w-2 h-2 bg-neon-blue rounded-full animate-bounce"></div>
+              <div className="w-2 h-2 bg-neon-purple rounded-full animate-bounce delay-100"></div>
+              <div className="w-2 h-2 bg-plasma-pink rounded-full animate-bounce delay-200"></div>
             </div>
           </div>
         )}
+
+        {/* Connection status ring */}
+        <div className="absolute -inset-2 rounded-full border border-neon-purple/20 animate-pulse"></div>
       </div>
     </div>
   );

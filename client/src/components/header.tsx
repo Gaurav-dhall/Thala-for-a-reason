@@ -1,4 +1,4 @@
-import { Palette, Search, Bell, User, Sparkles } from "lucide-react";
+import { Palette, Search, Bell, User, Zap, Activity } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
@@ -8,21 +8,21 @@ interface HeaderProps {
 
 export default function Header({ currentPath }: HeaderProps) {
   return (
-    <header className="glass-effect shadow-2xl border-b border-white/20 sticky top-0 z-40 backdrop-blur-md">
+    <header className="glass-effect cyber-border sticky top-0 z-40 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-12">
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative">
-                <Palette className="w-10 h-10 text-luxury-gold transition-transform duration-300 group-hover:rotate-12" />
-                <Sparkles className="w-4 h-4 text-gold-primary absolute -top-1 -right-1 animate-pulse" />
+                <Palette className="w-10 h-10 text-neon transition-transform duration-300 group-hover:rotate-12 pulse-neon" />
+                <Activity className="w-4 h-4 text-cyber-purple absolute -top-1 -right-1 animate-pulse" />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-3xl font-bold hero-text">
-                  VintageArt
+                  CyberArt
                 </span>
-                <span className="text-xs text-muted-foreground font-medium tracking-wide">
-                  LUXURY AUCTIONS
+                <span className="text-xs text-cyber font-medium tracking-wider uppercase">
+                  ELITE AUCTIONS
                 </span>
               </div>
             </Link>
@@ -31,25 +31,27 @@ export default function Header({ currentPath }: HeaderProps) {
               <Link href="/">
                 <Button 
                   variant={currentPath === '/' ? 'default' : 'ghost'}
-                  className={`px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 ${
+                  className={`px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 uppercase ${
                     currentPath === '/' 
-                      ? 'btn-luxury shadow-lg' 
-                      : 'hover:bg-white/10 hover:text-primary'
+                      ? 'btn-cyber neon-glow' 
+                      : 'hover:bg-white/5 hover:text-neon text-muted-foreground neon-border'
                   }`}
                 >
-                  Live Auctions
+                  <Zap className="w-4 h-4 mr-2" />
+                  Live Feed
                 </Button>
               </Link>
               <Link href="/dashboard">
                 <Button 
                   variant={currentPath === '/dashboard' ? 'default' : 'ghost'}
-                  className={`px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 ${
+                  className={`px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 uppercase ${
                     currentPath === '/dashboard' 
-                      ? 'btn-luxury shadow-lg' 
-                      : 'hover:bg-white/10 hover:text-primary'
+                      ? 'btn-cyber neon-glow' 
+                      : 'hover:bg-white/5 hover:text-neon text-muted-foreground neon-border'
                   }`}
                 >
-                  Analytics
+                  <Activity className="w-4 h-4 mr-2" />
+                  Neural Net
                 </Button>
               </Link>
             </nav>
@@ -59,24 +61,24 @@ export default function Header({ currentPath }: HeaderProps) {
             <Button 
               variant="ghost" 
               size="icon"
-              className="w-12 h-12 rounded-xl hover:bg-white/10 hover:scale-110 transition-all duration-300"
+              className="w-12 h-12 rounded-xl hover:bg-neon-purple/10 hover:scale-110 transition-all duration-300 cyber-border"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-5 h-5 text-neon-blue" />
             </Button>
             <Button 
               variant="ghost" 
               size="icon"
-              className="w-12 h-12 rounded-xl hover:bg-white/10 hover:scale-110 transition-all duration-300 relative"
+              className="w-12 h-12 rounded-xl hover:bg-neon-purple/10 hover:scale-110 transition-all duration-300 relative cyber-border"
             >
-              <Bell className="w-5 h-5" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+              <Bell className="w-5 h-5 text-neon-cyan" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-plasma-pink rounded-full animate-pulse cyber-glow"></div>
             </Button>
             <Button 
               variant="ghost" 
               size="icon"
-              className="w-12 h-12 rounded-xl hover:bg-white/10 hover:scale-110 transition-all duration-300"
+              className="w-12 h-12 rounded-xl hover:bg-neon-purple/10 hover:scale-110 transition-all duration-300 cyber-border"
             >
-              <User className="w-5 h-5" />
+              <User className="w-5 h-5 text-luxury-gold" />
             </Button>
           </div>
         </div>
