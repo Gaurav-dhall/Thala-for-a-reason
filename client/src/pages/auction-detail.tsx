@@ -51,7 +51,7 @@ export default function AuctionDetailPage() {
         setCurrentBid(lastMessage.currentBid);
       }
       if (lastMessage.bid) {
-        setBidHistory(prev => [lastMessage.bid!, ...prev]);
+        setBidHistory(prev => [{...lastMessage.bid! , paintingId : paintingId}, ...prev]);
       }
       
       // Invalidate queries to refresh data

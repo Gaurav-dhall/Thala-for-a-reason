@@ -8,6 +8,7 @@ interface SocketMessage {
     bidderName: string;
     amount: string;
     timestamp: Date;
+    // paintingId?: number;
   };
   currentBid?: string;
 }

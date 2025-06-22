@@ -1,6 +1,8 @@
-import { Palette, Search, Bell, User, Zap, Activity } from "lucide-react";
+import { Palette, Search, Bell, User, Zap, Activity, Filter, Eye } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 
 interface HeaderProps {
   currentPath?: string;
@@ -19,7 +21,7 @@ export default function Header({ currentPath }: HeaderProps) {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-3xl font-bold hero-text">
-                  CyberArt
+                  VintageArt
                 </span>
                 <span className="text-xs text-cyber font-medium tracking-wider uppercase">
                   ELITE AUCTIONS
@@ -38,7 +40,7 @@ export default function Header({ currentPath }: HeaderProps) {
                   }`}
                 >
                   <Zap className="w-4 h-4 mr-2" />
-                  Live Feed
+                  Live Auctions
                 </Button>
               </Link>
               <Link href="/dashboard">

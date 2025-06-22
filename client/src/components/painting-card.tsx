@@ -62,7 +62,7 @@ export default function PaintingCard({ painting, onClick }: PaintingCardProps) {
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
           <div className="flex items-center space-x-2 glass-effect cyber-border rounded-full px-4 py-2 text-sm font-semibold text-neon">
             <Eye className="w-4 h-4" />
-            <span>ACCESS NODE</span>
+            <span>VIEW DETAILS</span>
           </div>
         </div>
 
