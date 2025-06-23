@@ -21,7 +21,7 @@ export default function Header({ currentPath }: HeaderProps) {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-3xl font-bold hero-text">
-                  VintageArt
+                  Vin-Art
                 </span>
                 <span className="text-xs text-cyber font-medium tracking-wider uppercase">
                   ELITE AUCTIONS
@@ -59,7 +59,7 @@ export default function Header({ currentPath }: HeaderProps) {
             </nav>
           </div>
           
-          <div className="flex items-center space-x-3">
+          {/* <div className="flex items-center space-x-3">
             <Button 
               variant="ghost" 
               size="icon"
@@ -82,7 +82,7 @@ export default function Header({ currentPath }: HeaderProps) {
             >
               <User className="w-5 h-5 text-luxury-gold" />
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

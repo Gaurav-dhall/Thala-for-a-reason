@@ -155,7 +155,7 @@ export default function AuctionDetailPage() {
                 </div>
 
                 {/* Action buttons overlay */}
-                <div className="absolute bottom-6 left-6 flex space-x-3">
+                {/* <div className="absolute bottom-6 left-6 flex space-x-3">
                   <Button size="sm" className="glass-effect hover:bg-white/20 text-white border-white/20">
                     <Heart className="w-4 h-4 mr-2" />
                     Save
@@ -164,7 +164,7 @@ export default function AuctionDetailPage() {
                     <Share className="w-4 h-4 mr-2" />
                     Share
                   </Button>
-                </div>
+                </div> */}
               </div>
               
               <CardContent className="p-8">

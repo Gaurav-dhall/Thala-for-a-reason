@@ -88,7 +88,7 @@ export default function BidForm({ painting, onBidSuccess }: BidFormProps) {
               type="text"
               value={formData.bidderName}
               onChange={(e) => setFormData({...formData, bidderName: e.target.value})}
-              className={`h-12 text-lg font-medium cyber-border bg-deep-space/50 text-foreground ${errors.bidderName ? 'border-red-500' : ''}`}
+              className={`h-12 text-lg font-medium cyber-border bg-deep-space/50 text-black ${errors.bidderName ? 'border-red-500' : ''}`}
               placeholder="Enter your distinguished name"
             />
             {errors.bidderName && (
@@ -101,15 +101,15 @@ export default function BidForm({ painting, onBidSuccess }: BidFormProps) {
               Bid Amount (USD)
             </Label>
             <div className="relative">
-              <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
+              {/* <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
                 <DollarSign className="w-6 h-6 text-luxury-gold pulse-neon" />
-              </div>
+              </div> */}
               <Input
                 id="amount"
                 type="number"
                 value={formData.amount}
                 onChange={(e) => setFormData({...formData, amount: e.target.value})}
-                className={`pl-14 h-14 text-2xl font-bold cyber-border bg-deep-space/50 text-foreground ${errors.amount ? 'border-red-500' : ''}`}
+                className={`pl-4 h-14 text-2xl font-bold cyber-border bg-deep-space/50 text-black ${errors.amount ? 'border-red-500' : ''}`}
                 placeholder={`Min: ${formatCurrency(minimumBid)}`}
                 min={minimumBid.toString()}
                 step="1000"
