@@ -5,7 +5,6 @@ import Header from "@/components/header";
 import PaintingCard from "@/components/painting-card";
 import StatsCards from "@/components/stats-cards";
 import LegendarySection from "@/components/legendary-section";
-import VoiceCommand from "@/components/voice-command";
 import { Activity } from "lucide-react";
 import { formatCurrency } from "@/lib/utils";
 
@@ -109,7 +108,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <VoiceCommand />
+   
     </div>
   );
 }

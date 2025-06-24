@@ -37,7 +37,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         startingBid: "100000",
         currentBid: "125000",
-        auctionEndTime: new Date(Date.now() + 2 * 60 * 60 * 1000 + 15 * 60 * 1000), // 2h 15m from now
+        auctionEndTime: new Date(Date.now() + 5 * 60 * 60 * 1000 + 15 * 60 * 1000), // 5h 15m from now
       },
       {
         title: "Morning Garden",
@@ -48,7 +48,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         startingBid: "500000",
         currentBid: "875000",
-        auctionEndTime: new Date(Date.now() + 1 * 60 * 60 * 1000 + 42 * 60 * 1000), // 1h 42m from now
+        auctionEndTime: new Date(Date.now() + 7 * 60 * 60 * 1000 + 42 * 60 * 1000), // 7h 42m from now
       },
       {
         title: "Portrait of Lady Catherine",
@@ -70,7 +70,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1578662015616-7ed633a97b50?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         startingBid: "200000",
         currentBid: "320000",
-        auctionEndTime: new Date(Date.now() + 45 * 60 * 1000), // 45m from now
+        auctionEndTime: new Date(Date.now() + 2 * 60 * 1000), // 2m from now
       },
       {
         title: "Windmill Landscape",
@@ -92,7 +92,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1578662996488-ac4a8db28cbb?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         startingBid: "400000",
         currentBid: "680000",
-        auctionEndTime: new Date(Date.now() + 2 * 60 * 60 * 1000 + 55 * 60 * 1000), // 2h 55m from now
+        auctionEndTime: new Date(Date.now() + 8 * 60 * 60 * 1000 + 55 * 60 * 1000), // 8h 55m from now
       }
     ];
 
