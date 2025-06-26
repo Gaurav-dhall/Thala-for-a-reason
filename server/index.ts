@@ -2,9 +2,19 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
+import cors from "cors";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+const corsOptions = {
+  origin: 'https://www.omnidim.io', // ✅ Allow only your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, // Allow cookies to be sent
+};
+
+app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
   const start = Date.now();

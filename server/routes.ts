@@ -188,5 +188,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // GET /api/painting-id?name=PaintingName - Get painting ID by name for voice agent
+  app.get('/api/painting-id', async (req, res) => {
+    try {
+      const { name } = req.query;
+      if (!name || typeof name !== 'string') {
+        return res.status(400).json({ message: 'Painting name is required as a query parameter.' });
+      }
+
+      const paintings = await storage.getAllPaintings();
+     
+      const painting = paintings.find(p => (p as any).title?.toLowerCase() === name.toLowerCase());
+
+      if (!painting) {
+        return res.status(404).json({ message: 'Painting not found.' });
+      }
+
+      res.status(200).json({ id: painting.id });
+    } catch (error) {
+      console.error('Error fetching painting ID:', error);
+      res.status(500).json({ message: 'Failed to fetch painting ID.' });
+    }
+  });
+
   return httpServer;
 }

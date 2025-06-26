@@ -61,39 +61,39 @@ export class MemStorage implements IStorage {
         currentBid: "450000",
         auctionEndTime: new Date(Date.now() + 3 * 60 * 60 * 1000 + 28 * 60 * 1000), // 3h 28m from now
       },
-      {
-        title: "Still Life with Fruit",
-        artist: "Paul Cézanne",
-        year: 1879,
-        type: "Oil on Canvas",
-        description: "Classic still life composition",
-        imageUrl: "https://images.unsplash.com/photo-1578662015616-7ed633a97b50?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        startingBid: "200000",
-        currentBid: "320000",
-        auctionEndTime: new Date(Date.now() + 2 * 60 * 1000), // 2m from now
-      },
-      {
-        title: "Windmill Landscape",
-        artist: "Jacob van Ruisdael",
-        year: 1665,
-        type: "Oil on Panel",
-        description: "Dutch Golden Age landscape painting",
-        imageUrl: "https://images.unsplash.com/photo-1578662996486-8a7b4cbe72ae?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        startingBid: "150000",
-        currentBid: "210000",
-        auctionEndTime: new Date(Date.now() + 4 * 60 * 60 * 1000 + 12 * 60 * 1000), // 4h 12m from now
-      },
-      {
-        title: "Dancing Figures",
-        artist: "Edgar Degas",
-        year: 1884,
-        type: "Pastel on Paper",
-        description: "Ballet dancers in motion",
-        imageUrl: "https://images.unsplash.com/photo-1578662996488-ac4a8db28cbb?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        startingBid: "400000",
-        currentBid: "680000",
-        auctionEndTime: new Date(Date.now() + 8 * 60 * 60 * 1000 + 55 * 60 * 1000), // 8h 55m from now
-      }
+      // {
+      //   title: "Still Life with Fruit",
+      //   artist: "Paul Cézanne",
+      //   year: 1879,
+      //   type: "Oil on Canvas",
+      //   description: "Classic still life composition",
+      //   imageUrl: "https://images.unsplash.com/photo-1578662015616-7ed633a97b50?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+      //   startingBid: "200000",
+      //   currentBid: "320000",
+      //   auctionEndTime: new Date(Date.now() + 2 * 60 * 1000), // 2m from now
+      // },
+      // {
+      //   title: "Windmill Landscape",
+      //   artist: "Jacob van Ruisdael",
+      //   year: 1665,
+      //   type: "Oil on Panel",
+      //   description: "Dutch Golden Age landscape painting",
+      //   imageUrl: "https://images.unsplash.com/photo-1578662996486-8a7b4cbe72ae?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+      //   startingBid: "150000",
+      //   currentBid: "210000",
+      //   auctionEndTime: new Date(Date.now() + 4 * 60 * 60 * 1000 + 12 * 60 * 1000), // 4h 12m from now
+      // },
+      // {
+      //   title: "Dancing Figures",
+      //   artist: "Edgar Degas",
+      //   year: 1884,
+      //   type: "Pastel on Paper",
+      //   description: "Ballet dancers in motion",
+      //   imageUrl: "https://images.unsplash.com/photo-1578662996488-ac4a8db28cbb?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+      //   startingBid: "400000",
+      //   currentBid: "680000",
+      //   auctionEndTime: new Date(Date.now() + 8 * 60 * 60 * 1000 + 55 * 60 * 1000), // 8h 55m from now
+      // }
     ];
 
     samplePaintings.forEach(painting => {
